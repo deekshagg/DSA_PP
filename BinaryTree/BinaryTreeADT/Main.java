@@ -2,9 +2,16 @@ package BinaryTree.BinaryTreeADT;
 
 import java.util.Scanner;
 import java.util.Stack;
-import java.util.AbstractList;
+// import java.util.AbstractList;
 
 public class Main {
+
+    public static void display(Node n) {
+        if(n == null) return;
+        display(n.left);
+        System.out.println(n.data);
+        display(n.right);
+    }
 
     public static class Node{
         int data;
@@ -13,23 +20,25 @@ public class Main {
 
         Node(int d){
             data=d;
-            left=right=null;
+            left = null;
+            right = null;
         }
     }
 
     //BuildTree
+    static Scanner scan = new Scanner(System.in);
     public static Node BuildTree(){
         
-        Scanner scan = new Scanner(System.in);
         int d = scan.nextInt();
         if(d==-1){
-            scan.close();
+            // scan.close();
             return null;
         }
         Node n= new Node(d);
         n.left = BuildTree();
         n.right = BuildTree();
-        scan.close();
+        // scan.close();
+        
         return n;
 
     }
@@ -75,25 +84,25 @@ public class Main {
         }
         Stack < Node > stack = new Stack<Node>();
         Node current = null;
-        stack.push(this.root);
+        stack.push(root);
         while(stack.empty()==false){
-            current = stack.top();
+            current = stack.peek();
             System.out.println(current.data + " ");
             stack.pop();
-            if(current.right){
+            if(current.right != null){
                 stack.push(current.right);
             }
-            if(current.left){
+            if(current.left != null){
                 stack.push(current.left);
             }
         }
-
-
     }
     public static void main(String[] args) {
         Node root = BuildTree();
-        printPreorderTreeRecursive(root);
-        printInorderTreeRecursive(root);
-        printPostorderTreeRecursive(root);
+        // display(root);
+        // printPreorderTreeRecursive(root);
+        printPreorderTreeIterative(root);
+        // printInorderTreeRecursive(root);
+        // printPostorderTreeRecursive(root);
     }
 }
