@@ -2,12 +2,24 @@ package BinaryTree.MaxElementsinaLevel;
 /* package codechef; // don't place package name! */
 
 import java.util.*;
-import java.lang.*;
-import java.io.*;
 
 /* Name of the class has to be "Main" only if the class is public. */
-class Codechef
+class Main
 {
+	static Scanner scan = new Scanner(System.in);
+    public static Node BuildTree(){
+        
+        int d = scan.nextInt();
+        if(d==-1) return null;
+        Node n= new Node(d);
+        n.left = BuildTree();
+        n.right = BuildTree();
+        return n;
+    }
+    public static void main(String[] args) {
+        Node root = BuildTree();
+        height(root);
+    }
     static class Node{
         int data;
         Node left, right;
@@ -15,10 +27,10 @@ class Codechef
             this.data = data;
         }
     }
-	public static int height (Node root) throws java.lang.Exception
+	public static int height (Node root)
 	{
 		// your code goes here
-		Queue<Node> que = new LinkedList();
+		Queue<Node> que = new LinkedList<Node>();
 		que.add(root);
 		int ans = 0;
 		while(que.size() >0 ){
