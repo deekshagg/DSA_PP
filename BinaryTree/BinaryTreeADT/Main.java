@@ -12,7 +12,7 @@ public class Main {
         System.out.println(n.data);
         display(n.right);
     }
-
+    
     public static class Node{
         int data;
         Node left;
@@ -26,6 +26,8 @@ public class Main {
     }
 
     //BuildTree
+
+    // 4 5 2 -1 -1 1 -1 -1 7 -1 -1 
     static Scanner scan = new Scanner(System.in);
     public static Node BuildTree(){
         

@@ -7,7 +7,6 @@ import java.util.*;
 /* Name of the class has to be "Main" only if the class is public. */
 class Main
 {
-
     static Scanner scan = new Scanner(System.in);
     public static Node BuildTree(){
         
@@ -26,7 +25,7 @@ class Main
     }
     public static void main(String[] args) {
         Node root = BuildTree();
-        height(root);
+        System.out.println( height(root));
     }
 
     static class Node{
