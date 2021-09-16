@@ -9,14 +9,14 @@ public class Main {
         for(int i = 0 ; i<testcase ; i++){
             int number = scan.nextInt();
             boolean isPrime = true;
-            int div = 2;
-            while(div * div <= number) {
-                int remainder = number%div;
+            int divisor = 2;
+            while(divisor * divisor <= number) {
+                int remainder = number%divisor;
                 if(remainder==0){
                     isPrime = false;
                     break;
                 }
-                div++;
+                divisor++;
             }
             if(isPrime==true){
                 System.out.println(number+" is prime;");
