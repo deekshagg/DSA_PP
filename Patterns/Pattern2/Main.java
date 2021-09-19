@@ -1,4 +1,4 @@
-package Pattern1;
+package Patterns;
 import java.util.*;
 public class Main{
     public static void main(String[] args) {
