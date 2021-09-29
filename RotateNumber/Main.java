@@ -3,7 +3,8 @@
 public class Main {
     public static void main(String[] args) {
         int number = 95673;
-        System.out.println(reverse(number));
+        int kpostision = 3;
+        // System.out.println(reverse(number));
     }
     public static int reverse(int number){
         int count = (int) Math.log10(number);
@@ -15,6 +16,11 @@ public class Main {
             result = result + remainder*div;
             div = div /10;
         }
+        return result;
+    }
+    public static int reverse(int number, int kpostision){
+        int result =0 ;
+
         return result;
     }
 }
