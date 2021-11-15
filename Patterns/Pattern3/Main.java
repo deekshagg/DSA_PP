@@ -1,4 +1,4 @@
-package Pattern3;
+package Patterns.Pattern3;
 public class Main {
     public static void main(String[] args) {
         int n = 5;

@@ -1,10 +1,10 @@
-
+package RotateNumber;
 
 public class Main {
     public static void main(String[] args) {
         int number = 95673;
         int kpostision = 3;
-        // System.out.println(reverse(number));
+        System.out.println(reverse(number));
     }
     public static int reverse(int number){
         int count = (int) Math.log10(number);

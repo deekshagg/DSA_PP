@@ -1,5 +1,5 @@
-package Pattern1;
-import java.util.*;
+package Patterns.Pattern1;
+// import java.util.*;
 public class Main{
     public static void main(String[] args) {
         int n = 5;
