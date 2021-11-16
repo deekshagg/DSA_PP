@@ -11,6 +11,7 @@ public class Main {
          for(int i = 0 ; i < arr.length ; i++){
              arr[i] = scn.nextInt();
          }
+        //  isme reverse bubble sort use hua
          for (int i = 1 ; i <= arr.length - 1 ; i++){
              for(int j = i - 1 ; j >= 0 ; j--){
                  if(arr[j] > arr[j+1]){
