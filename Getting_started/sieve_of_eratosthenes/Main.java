@@ -1,4 +1,4 @@
-package time_space_complexity.sieve_of_eratosthenes;
+package Getting_started.sieve_of_eratosthenes;
 
 import java.util.Scanner;
 

@@ -1,4 +1,4 @@
-package print_subsequence_pss;
+package recursion.withArrayList.print_subsequence_pss;
 
 import java.util.Scanner;
 
