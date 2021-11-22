@@ -5,6 +5,7 @@ import java.util.*;
 
 public class Main {
 
+  // you need to input 2 "sorted arrays"
   public static int[] mergeTwoSortedArrays(int[] a, int[] b){
     int[] answer = new int[a.length + b.length];
     int i = 0; 

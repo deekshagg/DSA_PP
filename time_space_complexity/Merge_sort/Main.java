@@ -26,9 +26,9 @@ public class Main {
             return ba;
         }
         int mid = (lo + hi)/2;
-        int[] fsh = merge_sort(arr, lo, mid);
-        int[] ssh= merge_sort(arr, mid+1, hi);
-        int[] ans = mergeTwoSortedArrays(fsh, ssh) ;
+        int[] firstsSortedHalf = merge_sort(arr, lo, mid);
+        int[] secondSortedHalf = merge_sort(arr, mid+1, hi);
+        int[] ans = mergeTwoSortedArrays(firstsSortedHalf, secondSortedHalf) ;
         return ans;
     }
 

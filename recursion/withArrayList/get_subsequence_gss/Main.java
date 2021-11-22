@@ -1,4 +1,4 @@
-package get_subsequence_gss;
+package recursion.withArrayList.get_subsequence_gss;
 
 import java.util.ArrayList;
 import java.util.Scanner;
