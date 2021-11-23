@@ -5,15 +5,22 @@ import java.util.*;
 public class BubbleSort {
 
   public static void bubbleSort(int[] arr) {
-    for(int itr=1; itr<arr.length; itr++){
-        for(int j = 0 ; j <= arr.length - 1 - itr ; j++){
+    // easy to understand method 1 
+    // for(int itr=0; itr<arr.length - 1; itr++){
+    //     for(int j = 0 ; j < arr.length - 1 ; j++){
+    //         if(isSmaller(arr, j+1 , j)== true){
+    //             swap(arr, j+1 , j);
+    //         }
+    //     }
+    // }
+    // optimised code  method 2
+    for(int itr=1 ; itr<arr.length; itr++){
+        for(int j = 0 ; j <= arr.length -1 - itr ; j++){
             if(isSmaller(arr, j+1 , j)== true){
                 swap(arr, j+1 , j);
             }
         }
     }
-
-    
   }
 
   // used for swapping ith and jth elements of array
