@@ -15,7 +15,7 @@ public class BubbleSort {
     // }
     // optimised code  method 2
     for(int itr=1 ; itr<arr.length; itr++){
-        for(int j = 0 ; j <= arr.length -1 - itr ; j++){
+        for(int j = 0 ; j <= arr.length - itr ; j++){
             if(isSmaller(arr, j+1 , j)== true){
                 swap(arr, j+1 , j);
             }
