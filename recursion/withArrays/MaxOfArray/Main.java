@@ -1,4 +1,4 @@
-package recursion.with Arrays.MaxOfArray;
+package recursion.withArrays.MaxOfArray;
 
 import java.io.*;
 import java.util.*;
