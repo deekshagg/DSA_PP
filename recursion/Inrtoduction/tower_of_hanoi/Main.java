@@ -1,4 +1,4 @@
-package tower_of_hanoi;
+package recursion.Inrtoduction.tower_of_hanoi;
 import java.io.*;
 import java.util.*;
 

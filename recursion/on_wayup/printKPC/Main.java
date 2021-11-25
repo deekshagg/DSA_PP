@@ -1,4 +1,4 @@
-package printKPC;
+package recursion.on_wayup.printKPC;
 
 import java.util.Scanner;
 

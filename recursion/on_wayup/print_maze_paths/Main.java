@@ -1,4 +1,4 @@
-package print_maze_paths;
+package recursion.on_wayup.print_maze_paths;
 
 import java.util.ArrayList;
 import java.util.Scanner;

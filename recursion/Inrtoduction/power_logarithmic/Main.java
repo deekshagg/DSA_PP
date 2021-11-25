@@ -1,4 +1,4 @@
-package power_logarithmic;
+package recursion.Inrtoduction.power_logarithmic;
 
 import java.io.*;
 import java.util.*;

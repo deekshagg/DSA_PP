@@ -1,4 +1,4 @@
-package get_maze_paths;
+package recursion.withArrayList.get_maze_paths;
 
 import java.util.ArrayList;
 import java.util.Scanner;

@@ -1,4 +1,4 @@
-package print_zigzag;
+package recursion.Inrtoduction.print_zigzag;
 
 import java.io.*;
 import java.util.*;
