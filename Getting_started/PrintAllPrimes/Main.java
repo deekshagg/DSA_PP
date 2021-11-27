@@ -8,7 +8,7 @@ public class Main {
         System.out.println("enter the range in which you want to print prime");
         int low = scan.nextInt();
         int high = scan.nextInt();
-        for(int n = low ; n<high ; n++){
+        for(int n = low ; n<=high ; n++){
             Boolean isPrime = true;
             for(int div = 2 ; div * div <= n ; div++){
                 int rem = n % div;
