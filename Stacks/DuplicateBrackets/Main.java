@@ -1,3 +1,5 @@
+package Stacks.DuplicateBrackets;
+
 import java.io.*;
 import java.util.*;
 
