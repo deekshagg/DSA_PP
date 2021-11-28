@@ -19,3 +19,8 @@ public class Main {
         scan.close();
     }
 }
+
+// Scanner scn = new Scanner(System.in);
+// int n = scn.nextInt();
+// int count = (int) Math.log10(n) + 1;
+// System.out.println(count);
