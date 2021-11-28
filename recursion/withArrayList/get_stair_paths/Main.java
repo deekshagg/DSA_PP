@@ -11,7 +11,6 @@ public class Main {
         System.out.println(paths);
     }
     public static ArrayList<String> getStairPaths(int n){
-
         if(n<0){
             ArrayList<String> basePaths = new ArrayList<>();
             return basePaths;
@@ -21,8 +20,6 @@ public class Main {
             basePaths.add("");
             return basePaths;
         }
-
-
         ArrayList<String> paths_from_n_minus_1 = getStairPaths(n-1);
         ArrayList<String> paths_from_n_minus_2 = getStairPaths(n-2);
         ArrayList<String> paths_from_n_minus_3 = getStairPaths(n-3);
