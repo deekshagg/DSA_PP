@@ -1,3 +1,4 @@
+package printZ;
 import java.util.*;
 
 public class Main {
