@@ -11,7 +11,7 @@ public class Main {
     Node head;
     Node tail;
     int size;
-
+    // complexity O(1)
     void addLast(int val) {
       Node temp = new Node();
       temp.data = val;
@@ -30,14 +30,14 @@ public class Main {
     public int size(){
       return size;
     }
-
+// complexity O(n)
     public void display(){
       for(Node temp = head; temp != null; temp = temp.next){
         System.out.print(temp.data + " ");
       }
       System.out.println();
     }
-
+// complexity O(1)
     public void removeFirst(){
       if(size == 0){
         System.out.println("List is empty");
@@ -49,7 +49,7 @@ public class Main {
         size--;
       }
     }
-
+// complexity O(1)
     public int getFirst(){
       if(size==0){
           System.out.println("List is empty");
@@ -57,7 +57,7 @@ public class Main {
       }
       return head.data;
     }
-
+// complexity O(1)
     public int getLast(){
       if(size==0){
           System.out.println("List is empty");
@@ -65,7 +65,7 @@ public class Main {
       }
       return tail.data;
     }
-
+// complexity O(n)
     public int getAt(int idx){
       if(size==0){
           System.out.println("List is empty");
