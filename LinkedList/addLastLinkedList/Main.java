@@ -1,7 +1,5 @@
-package LinkedList.addLastLinkedList;
-
 import java.io.*;
-// import java.util.*;
+import java.util.*;
 
 public class Main {
   public static class Node {
@@ -15,15 +13,15 @@ public class Main {
     int size;
 
     void addLast(int val) {
-      // Write your code here
-      Node temp = new Node();
-      temp.data = val;
-      temp.next = null;
-      if (size == 0) {
-        head = tail = temp;
-      } else {
-        tail.next = temp;
-        tail = temp;
+      Node node = new Node();
+      node.data = val;
+      node.next = null;
+      if(size==0){
+          head = tail = node;
+      }
+      else{
+          tail.next = node;
+          tail = node; 
       }
       size++;
     }
@@ -37,18 +35,18 @@ public class Main {
 
     if (list.size > 0) {
       System.out.println(list.tail.data);
-    }
+    } 
   }
   public static void main(String[] args) throws Exception {
     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     LinkedList list = new LinkedList();
 
     String str = br.readLine();
-    while (str.equals("quit") == false) {
-      if (str.startsWith("addLast")) {
+    while(str.equals("quit") == false){
+      if(str.startsWith("addLast")){
         int val = Integer.parseInt(str.split(" ")[1]);
         list.addLast(val);
-      }
+      } 
       str = br.readLine();
     }
 

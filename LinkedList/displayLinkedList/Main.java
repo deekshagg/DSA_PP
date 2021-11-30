@@ -1,7 +1,5 @@
-package LinkedList.displayLinkedList;
-
 import java.io.*;
-// import java.util.*;
+import java.util.*;
 
 public class Main {
   public static class Node {
@@ -30,16 +28,14 @@ public class Main {
     }
 
     public int size(){
-      // write code here
       return size;
     }
 
     public void display(){
-      // write code here
-      Node temp= head;
-      while(temp!= null){
-          System.out.print(temp.data + " ");
-          temp = temp.next;
+      Node node = head;
+      while(node!=null){
+        System.out.print(node.data + " ");
+        node = node.next;
       }
       System.out.println();
     }
