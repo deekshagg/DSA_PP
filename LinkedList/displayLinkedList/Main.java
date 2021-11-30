@@ -11,7 +11,7 @@ public class Main {
     Node head;
     Node tail;
     int size;
-
+// complexity o(1)
     void addLast(int val) {
       Node temp = new Node();
       temp.data = val;
@@ -26,11 +26,11 @@ public class Main {
 
       size++;
     }
-
+// complexity o(1)
     public int size(){
       return size;
     }
-
+// complexity o(1)
     public void display(){
       Node node = head;
       while(node!=null){

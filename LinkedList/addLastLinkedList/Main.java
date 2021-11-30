@@ -26,7 +26,7 @@ public class Main {
       size++;
     }
   }
-
+// complexity o(1)
   public static void testList(LinkedList list) {
     for (Node temp = list.head; temp != null; temp = temp.next) {
       System.out.println(temp.data);
