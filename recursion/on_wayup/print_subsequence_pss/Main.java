@@ -1,6 +1,7 @@
 package recursion.on_wayup.print_subsequence_pss;
 
 import java.util.Scanner;
+// this code is optimal then get subsequence
 
 public class Main {
     public static void main(String[] args) {

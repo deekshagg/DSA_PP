@@ -11,7 +11,8 @@ public class Main {
         printMazePaths(1, 1, row, column, "");
 
     }
-    public static void printMazePaths(int sourceRow, int sourceColumn, int destinationRow, int destinationColumn, String path) {
+    public static void printMazePaths(int sourceRow, int sourceColumn, int destinationRow, 
+    int destinationColumn, String path) {
         if(sourceRow > destinationRow || sourceColumn > destinationColumn){
             return;
         }else if(sourceRow == destinationRow && sourceColumn == destinationColumn){
