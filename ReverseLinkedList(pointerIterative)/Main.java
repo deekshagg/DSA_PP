@@ -181,7 +181,7 @@ public class Main {
  
     public void reversePI(){
       Node prev = null;
-      Node curr = null;
+      Node curr = head;
       while(curr!=null){
           Node nxt = curr.next;
           curr.next = prev;
@@ -190,7 +190,7 @@ public class Main {
       }
       Node temp = head;
       head  = tail;
-      tail = head;
+      tail = temp;
     }
   }
 
