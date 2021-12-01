@@ -44,6 +44,8 @@ public class Main {
       }else if(size == 1){
         head = tail = null;
         size--;
+        // or
+        // size == 0;
       }else{
         head = head.next;
         size--;
