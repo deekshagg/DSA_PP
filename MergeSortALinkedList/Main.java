@@ -226,7 +226,7 @@ public class Main {
       return s.data;
     }
 
-    public static LinkedList mergeTwoSortedLists(LinkedList l1, LinkedList l2) {
+   public static LinkedList mergeTwoSortedLists(LinkedList l1, LinkedList l2) {
       LinkedList ml = new LinkedList();
 
       Node one = l1.head;
@@ -253,29 +253,34 @@ public class Main {
 
       return ml;
     }
-    public static Node midNode(Node head , Node tail){
-        Node f = head;
-        Node s = head;
-        while (f.next != null && f.next.next != null) {
-            f = f.next.next;
-            s = s.next;
-          }
-    
-          return s;
+
+   
+   
+    public static Node midNode(Node head, Node tail) {
+      Node f = head;
+      Node s = head;
+      while (f.next != tail && f.next.next != tail) {
+        f = f.next.next;
+        s = s.next;
+      }
+
+      return s;
     }
 
-    public static LinkedList mergeSort(Node head, Node tail){
-        if(head == tail){
-            LinkedList base = new LinkedList();
-            base.addLast(head.data);
-            return base;
-        }
+    public static LinkedList mergeSort(Node head, Node tail) {
+     if(head == tail){
+        LinkedList br = new LinkedList();
+        br.addLast(head.data);
+        return br;
+      }
+
       Node mid = midNode(head, tail);
       LinkedList fsh = mergeSort(head, mid);
       LinkedList ssh = mergeSort(mid.next, tail);
-      LinkedList res = mergeTwoSortedLists(fsh, ssh);
-      return res;
+      LinkedList sl = mergeTwoSortedLists(fsh, ssh);
+      return sl;
     }
+
   }
 
   public static void main(String[] args) throws Exception {
