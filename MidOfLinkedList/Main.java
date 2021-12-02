@@ -1,5 +1,5 @@
 import java.io.*;
-import java.util.*;
+// import java.util.*;
 
 public class Main {
   public static class Node {
@@ -217,7 +217,7 @@ public class Main {
     public int mid(){
       Node fast = head;
       Node slow = head;
-      while(fast!=null && fast.next.next!=null){
+      while(fast.next!=null && fast.next.next!=null){
           fast = fast.next.next;
           slow = slow.next;
       }
