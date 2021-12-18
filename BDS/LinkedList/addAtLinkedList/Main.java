@@ -1,4 +1,4 @@
-package LinkedList.addAtLinkedList;
+package BDS.LinkedList.addAtLinkedList;
 import java.io.*;
 import java.util.*;
 

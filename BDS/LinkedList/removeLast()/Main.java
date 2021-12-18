@@ -1,4 +1,3 @@
-package BDS.LinkedList.addFirstInLinkedList;
 import java.io.*;
 import java.util.*;
 
@@ -12,7 +11,7 @@ public class Main {
     Node head;
     Node tail;
     int size;
-// complexity O(1)
+
     void addLast(int val) {
       Node temp = new Node();
       temp.data = val;
@@ -31,14 +30,14 @@ public class Main {
     public int size() {
       return size;
     }
-// complexity O(n)
+
     public void display() {
       for (Node temp = head; temp != null; temp = temp.next) {
         System.out.print(temp.data + " ");
       }
       System.out.println();
     }
-// complexity O(1)
+
     public void removeFirst() {
       if (size == 0) {
         System.out.println("List is empty");
@@ -50,7 +49,7 @@ public class Main {
         size--;
       }
     }
-// complexity O(1)
+
     public int getFirst() {
       if (size == 0) {
         System.out.println("List is empty");
@@ -59,7 +58,7 @@ public class Main {
         return head.data;
       }
     }
-// complexity O(1)
+
     public int getLast() {
       if (size == 0) {
         System.out.println("List is empty");
@@ -68,7 +67,7 @@ public class Main {
         return tail.data;
       }
     }
-// complexity O(n)
+
     public int getAt(int idx) {
       if (size == 0) {
         System.out.println("List is empty");
@@ -84,17 +83,63 @@ public class Main {
         return temp.data;
       }
     }
-// complexity O(1)
+
     public void addFirst(int val) {
+      Node temp = new Node();
+      temp.data = val;
+      temp.next = head;
+      head = temp;
+      
+      if(size == 0){
+        tail = temp;
+      }
+
+      size++;
+    }
+
+    public void addAt(int idx, int val){
+      if(idx < 0 || idx > size){
+        System.out.println("Invalid arguments");
+      } else if(idx == 0){
+        addFirst(val);
+      } else if(idx == size){
+        addLast(val);
+      } else {
         Node node = new Node();
         node.data = val;
-        if(size==0){
-            head = tail = node;
-        }else{
-            node.next = head;
-            head = node;
+
+        Node temp = head;
+        for(int i = 0; i < idx - 1; i++){
+          temp = temp.next;
         }
-      size++;
+        node.next = temp.next;
+
+        temp.next = node;
+        size++;
+      }
+ package BDS.LinkedList.removeLast();
+ 
+ public class Main {
+     
+ }
+    }
+
+    public void removeLast(){
+      if(head == null){
+          System.out.println("List is empty");
+      }
+      else if(head.next==null){
+          head = tail = null;
+      }
+      else{
+          Node node = head;
+          while(node.next.next != null){
+              node = node.next;
+          }
+          node.next = null;
+          tail = node;
+          size--;
+      }
     }
   }
 
@@ -132,7 +177,13 @@ public class Main {
       } else if (str.startsWith("addFirst")) {
         int val = Integer.parseInt(str.split(" ")[1]);
         list.addFirst(val);
-      }
+      } else if (str.startsWith("addAt")) {
+        int idx = Integer.parseInt(str.split(" ")[1]);
+        int val = Integer.parseInt(str.split(" ")[2]);
+        list.addAt(idx, val);
+      } else if (str.startsWith("removeLast")) {
+        list.removeLast();
+      } 
       str = br.readLine();
     }
   }
