@@ -1,3 +1,4 @@
+package BDS.LinkedList.removeLast;
 import java.io.*;
 import java.util.*;
 
@@ -117,11 +118,6 @@ public class Main {
         temp.next = node;
         size++;
       }
- package BDS.LinkedList.removeLast();
- 
- public class Main {
-     
- }
     }
 
     public void removeLast(){
