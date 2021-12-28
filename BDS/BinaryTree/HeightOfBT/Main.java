@@ -1,4 +1,4 @@
-package BinaryTree.HeightOfBT;
+package .BinaryTree.HeightOfBT;
 
 /* package codechef; // don't place package name! */
 

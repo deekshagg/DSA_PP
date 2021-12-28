@@ -1,4 +1,4 @@
-package BinaryTree.BinaryTreeADT;
+package BDS.BinaryTree.BinaryTreeADT;
 
 import java.util.Scanner;
 import java.util.Stack;

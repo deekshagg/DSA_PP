@@ -1,3 +1,4 @@
+package ADS.HashMapsAndHeaps.LongestConsecutiveSequenceOfElements;
 import java.io.*;
 import java.util.*;
 
@@ -5,44 +6,43 @@ public class Main{
 
 public static void main(String[] args) throws Exception {
     // write your code here
-    Scanner scn = new Scanner (System.in);
+    Scanner scn = new Scanner(System.in);
     int n = scn.nextInt();
-    int [] a = new int[n];
-    for(int i =0; i <a.length ; i++){
-        a[i]=scn.nextInt();
+    int arr[] = new int[n];
+    for(int i = 0 ; i < n ; i++){
+        arr[i] = scn.nextInt();
     }
 
-    HashMap <Integer,Boolean> hm = new HashMap<>();
-    for(int val : a){
-        hm.put(val,true);
-    }
-
-    for(int val : a){
-        if(hm.containsKey(val-1)){
-            hm.put(val,false);
-        }
-    }
-    int msp =0; 
-    int ml = 0;
-
-    for(int val : a){
-        if(hm.get(val)==true){
-            int tl = 1;
-            int tsp = val;
-            while(hm.containsKey(tl+tsp)){
-                tl++;
-            }
-
-            if(tl>ml){
-                msp = tsp;
-                ml = tl;
-            }
-        }
-    }
-    for(int i = 0; i<ml ; i++){
-        System.out.println(msp+i);
-    }
-
+    longestConsecutiveSequence(arr);
+ }
+ public static void longestConsecutiveSequence(int[] arr){
+     HashMap<Integer, Boolean> map = new HashMap<>();
+     for(int value : arr){
+        map.put(value, true);
+     }
+     for(int value : arr){
+         if(map.containsKey(value-1)){
+             map.put(value, false);
+         }
+     }
+     int maxSequenceStartInt = 0;
+     int maxLength = 0;
+     for(int value : arr){
+         if(map.get(value) == true){
+             int tempSeqStartInt = value;
+             int tempLength = 1; 
+             while(map.containsKey(tempSeqStartInt+tempLength)){
+                 tempLength++;
+             }
+             if(tempLength > maxLength){
+                 maxLength = tempLength;
+                 maxSequenceStartInt = tempSeqStartInt;
+             }
+         }
+     }
+     for(int i = 0 ; i < maxLength ; i++){
+         System.out.println(maxSequenceStartInt+i);
+     }
  }
 
 }
