@@ -22,5 +22,6 @@ public static void main(String[] args) {
         originalposition++;
     }
     System.out.println(inverse);
+
  }
 }
