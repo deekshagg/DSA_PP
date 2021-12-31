@@ -1,4 +1,4 @@
-package printZ;
+package BasicsOfProgramming.GettingStarted.printZ;
 import java.util.*;
 
 public class Main {

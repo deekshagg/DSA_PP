@@ -1,4 +1,4 @@
-package Getting_started.ReverseNumber;
+package BasicsOfProgramming.GettingStarted.ReverseNumber;
 // import java.util.*;
 public class Main {
     // public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package Getting_started.sieve_of_eratosthenes;
+package BasicsOfProgramming.GettingStarted.sieve_of_eratosthenes;
 
 import java.util.Scanner;
 

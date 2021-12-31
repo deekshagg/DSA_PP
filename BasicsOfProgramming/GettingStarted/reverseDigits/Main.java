@@ -1,4 +1,4 @@
-package reverseDigits;
+package BasicsOfProgramming.GettingStarted.reverseDigits;
 
 import java.util.*;
    
