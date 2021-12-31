@@ -1,3 +1,4 @@
+package BasicsOfProgramming.GettingStarted.pythagorasTriplet;
 import java.util.*;
   
   public class Main{
