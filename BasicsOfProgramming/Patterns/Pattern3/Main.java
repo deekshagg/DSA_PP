@@ -1,4 +1,4 @@
-package Getting_started.Patterns.Pattern3;
+package BasicsOfProgramming.Patterns.Pattern3;
 public class Main {
     public static void main(String[] args) {
         int n = 5;

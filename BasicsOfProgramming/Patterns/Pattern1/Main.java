@@ -1,4 +1,4 @@
-package Getting_started.Patterns.Pattern1;
+package BasicsOfProgramming.Patterns.Pattern1;
 // import java.util.*;
 // public class Main{
 //     public static void main(String[] args) {

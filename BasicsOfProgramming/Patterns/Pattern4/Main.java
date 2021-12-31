@@ -1,25 +1,21 @@
-package Getting_started.Patterns.Pattern4;
-public class Main {
-    public static void main(String[] args) {
-        int n = 5;
-        int sp = 0;
-        int st = n;
-        for(int i =1 ; i<=n ; i++){
+package BasicsOfProgramming.Patterns.Pattern4;
+import java.util.*;
 
-            for(int j=1 ; j<=sp; j++)
-            {
-                System.out.print(" \t");
-                
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scn = new Scanner(System.in);
+        int n = scn.nextInt();
+        for(int r = 1 ; r <= n ; r++){
+            for(int c = 1 ; c <= n ; c++){
+                if(r<=c){
+                    System.out.print("*\t");
+                }else{
+                    System.out.print("\t");
+                }
             }
-            for(int j=1 ; j<=st; j++)
-            {
-                System.out.print("*\t");
-                
-            }
-            
-            st--;
-            sp++;
             System.out.println();
         }
+
     }
 }
