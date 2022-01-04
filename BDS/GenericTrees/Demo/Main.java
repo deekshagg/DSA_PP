@@ -8,6 +8,20 @@ public class Main {
             this.data = data;
         }
     }
+
+    public static void levelOrder(Node root){
+        Queue<Node> queue = new ArrayDeque<Node>();
+        queue.add(root);
+
+        while(queue.size()>0){
+            Node temp = queue.remove();
+            System.out.print(temp.data+ " ");
+            for(Node child: temp.children){
+                queue.add(child);
+            }
+        }
+        System.out.println(".");
+    }
     public static void main(String[] args) {
         Node root = new Node(10);
 
@@ -21,27 +35,29 @@ public class Main {
         root.children.add(forty);
 
         Node fifty = new Node(50);
-        root.children.add(twenty);
+        twenty.children.add(fifty);
 
         Node sixty = new Node(60);
-        root.children.add(twenty);
+        twenty.children.add(sixty);
 
         Node seventy = new Node(70);
-        root.children.add(thirty);
+        thirty.children.add(seventy);
 
         Node eighty = new Node(80);
-        root.children.add(thirty);
+        thirty.children.add(eighty);
 
         Node ninty = new Node(90);
-        root.children.add(thirty);
+        thirty.children.add(ninty);
 
         Node hundred = new Node(100);
-        root.children.add(forty);
+        forty.children.add(hundred);
 
         Node hundredten = new Node(110);
-        root.children.add(eighty);
+        eighty.children.add(hundredten);
 
         Node hundredtwenty = new Node(120);
-        root.children.add(eighty);
+        eighty.children.add(hundredtwenty);
+
+        levelOrder(root);
     }
 }
