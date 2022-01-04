@@ -22,6 +22,27 @@ public class Main {
         }
         System.out.println(".");
     }
+
+    public static void levelOrderLineWise(Node root){
+        Queue<Node> queue = new ArrayDeque<Node>();
+        Queue<Node> cqueue = new ArrayDeque<Node>();
+        queue.add(root);
+        while(queue.size()>0){
+            Node temp = queue.remove();
+            System.out.print(temp.data + " ");
+            for(Node child : temp.children){
+                cqueue.add(child);
+            }
+
+            if(queue.size()==0){
+                queue = cqueue;
+                cqueue = new ArrayDeque<>();
+                System.out.println(".");
+            }
+        }
+
+    }
+
     public static void main(String[] args) {
         Node root = new Node(10);
 
@@ -59,5 +80,6 @@ public class Main {
         eighty.children.add(hundredtwenty);
 
         levelOrder(root);
+        levelOrderLineWise(root);
     }
 }
