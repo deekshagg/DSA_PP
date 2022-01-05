@@ -1,4 +1,4 @@
-package BDS.GenericTrees.HeightOfAGT;
+package BDS.GenericTrees.SizeOfGT;
 
 import java.io.*;
 import java.util.*;
@@ -46,44 +46,13 @@ public class Main {
     return root;
   }
 
-  public static int size(Node node) {
-    int s = 0;
-
-    for (Node child : node.children) {
-      s += size(child);
-    }
-    s += 1;
-
-    return s;
-  }
-
-  public static int max(Node node) {
-    int m = Integer.MIN_VALUE;
-
-    for (Node child : node.children) {
-      int cm = max(child);
-      m = Math.max(m, cm);
-    }
-    m = Math.max(m, node.data);
-
-    return m;
-  }
-
-  public static int height(Node node) {
+  public static int size(Node node){
     // write your code here
-    // int height = -1; 
-    // for (Node child : node.children){
-    //     int recursiveHeight = height(child);
-    //     height = Math.max(height, recursiveHeight);
-    // }
-    // return height+1;
-
-    int height = 0; 
-    for (Node child : node.children){
-        int recursiveHeight = height(child);
-        height = Math.max(height, recursiveHeight+1);
+    int size = 0; 
+    for(Node child : node.children){
+        size += size(child);
     }
-    return height;
+    return size+1;
   }
 
   public static void main(String[] args) throws Exception {
@@ -96,8 +65,8 @@ public class Main {
     }
 
     Node root = construct(arr);
-    int h = height(root);
-    System.out.println(h);
+    int sz = size(root);
+    System.out.println(sz);
     // display(root);
   }
 
