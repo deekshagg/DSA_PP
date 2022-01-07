@@ -1,6 +1,6 @@
 import java.util.*;
 
-class Main {
+class solve {
 
     static String max;
 

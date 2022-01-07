@@ -1,13 +1,13 @@
 package MaqSoftware;
 
-public class Main1 {
+// public class Main1 {
     
-}
+// }
 // Print the last letter of each word
 // "The weather, is good today."
 
 // import java.util.*;
-// public static class Main{
+// public class Main1{
 //     public static void main(String args[]){
 //         String str = "The weather, is good today.";
 //         str.split(" ");   // ["The", "weather,", "is", "good", "today."]
