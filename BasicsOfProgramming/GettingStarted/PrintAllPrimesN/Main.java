@@ -1,4 +1,4 @@
-package Getting_started.PrintAllPrimesN;
+package BasicsOfProgramming.GettingStarted.PrintAllPrimesN;
 
 import java.util.Scanner;
 

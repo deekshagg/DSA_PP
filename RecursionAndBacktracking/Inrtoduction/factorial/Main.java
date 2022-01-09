@@ -1,4 +1,4 @@
-package recursion.Inrtoduction.factorial;
+package RecursionAndBacktracking.Inrtoduction.factorial;
 
 import java.io.*;
 import java.util.*;
