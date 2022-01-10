@@ -1,9 +1,10 @@
+package Infosys;
 import java.util.Scanner;
 
 public class Solution {
 
     public static int diffResult(int N, String A, String B){
-        
+        return 0;
     }
     public static void main(String[] args) {
         Scanner scn = new Scanner(System.in);
