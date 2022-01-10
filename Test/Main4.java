@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Main{
+public class Main4{
 
     public static int productsAtNegativeTemp(int[] temparature){
         int answer = 0;
