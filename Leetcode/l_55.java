@@ -3,7 +3,7 @@ package Leetcode;
 class l_55 {
     public boolean canJump(int[] nums) {
     boolean[]dp = new boolean[nums.length];
-    int max = 0;
+    
     dp[dp.length - 1] = true;
    
     for (int i = nums.length - 2; i >= 0; i--)
