@@ -1,3 +1,6 @@
+// package Leetcode;
+import java.util.*;
+
 class l_51 {
     List<List<String>> result;
     public List<List<String>> solveNQueens(int n) {
