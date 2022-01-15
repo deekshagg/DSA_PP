@@ -11,13 +11,13 @@ public class Main {
 
     public static void levelOrder(Node root){
         Queue<Node> queue = new ArrayDeque<Node>();
-        queue.add(root);
+        queue.add(root); //10
 
         while(queue.size()>0){
-            Node temp = queue.remove();
-            System.out.print(temp.data+ " ");
+            Node temp = queue.remove();// 30 40
+            System.out.print(temp.data+ " "); //10 20 30 40
             for(Node child: temp.children){
-                queue.add(child);
+                queue.add(child);//-> 20 30 40 50 60
             }
         }
         System.out.println(".");
