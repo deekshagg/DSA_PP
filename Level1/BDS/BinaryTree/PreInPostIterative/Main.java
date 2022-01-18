@@ -81,8 +81,49 @@ public class Main {
     display(node.right);
   }
 
+  static class Tpair{
+      Node node;
+      int state;
+      Tpair(Node node , int state){
+          this.node = node;
+          this.state = state;
+      }
+  }
   public static void iterativePrePostInTraversal(Node node) {
-    // write your code here
+    Stack<Tpair> stack = new Stack<>();
+    Tpair rootp = new Tpair(node, 1);
+    stack.push(rootp);
+
+    String pre = "";
+    String in = "";
+    String post = "";
+
+    while(stack.size()>0){
+        Tpair top = stack.peek();
+        if(top.state == 1){
+            // pre = pre, left
+            pre += top.node.data + " ";
+            if(top.node.left != null){
+                Tpair leftp = new Tpair(top.node.left,1);
+                stack.push(leftp);
+            }
+        } else if(top.state == 2){
+            // in = in, right
+            in += top.node.data + " ";
+            if(top.node.right != null){
+                Tpair rightp = new Tpair(top.node.right, 1);
+                stack.push(rightp);
+            }
+        }else{
+            // post = post, pop
+            post += top.node.data + " ";
+            stack.pop();
+        }
+        top.state++;
+    }
+    System.out.println(pre);
+    System.out.println(in);
+    System.out.println(post);
   }
 
   public static void main(String[] args) throws Exception {
