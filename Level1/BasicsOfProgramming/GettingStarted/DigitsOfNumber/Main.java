@@ -1,4 +1,4 @@
-package Getting_started.DigitsOfNumber;
+package BasicsOfProgramming.GettingStarted.DigitsOfNumber;
 // import java.util.*;
 
 // public class Main {

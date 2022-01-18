@@ -1,4 +1,4 @@
-package Getting_started.DigitFrequency;
+package BasicsOfProgramming.GettingStarted.DigitFrequency;
 
 import java.util.Scanner;
 

@@ -1,4 +1,4 @@
-package Getting_started.CountOfDigits;
+package BasicsOfProgramming.GettingStarted.CountOfDigits;
 
 import java.util.Scanner;
 

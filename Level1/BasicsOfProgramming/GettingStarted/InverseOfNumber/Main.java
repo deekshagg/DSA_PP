@@ -1,3 +1,4 @@
+package BasicsOfProgramming.GettingStarted.InverseOfNumber;
 import java.util.*;
 
 public class Main{
