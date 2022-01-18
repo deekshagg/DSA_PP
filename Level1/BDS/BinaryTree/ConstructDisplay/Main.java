@@ -1,16 +1,29 @@
 package BDS.BinaryTree.ConstructDisplay;
+import java.util.*;
+import java.util.Stack;
 
 public class Main {
-    public class Node{
+    public static class Node{
         int data;
         Node left;
         Node right;
     }
-    public class Pair{
+    public static class Pair{
         Node node;
         int state;
     }
     public static Node construct(Integer[] arr){
+        Stack<Pair> stack = new Stack<>();
+        Node root = new Node();
+        root.data = arr[0];
+        Pair rootp = new Pair();
+        rootp.node = root;
+        rootp.state = 1;
+        stack.push(rootp);
+        int idx = 1;
+        while(stack.size()>0){
+
+        }
         return null;
     }
     public static void display(Node node){}

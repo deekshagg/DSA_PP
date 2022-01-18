@@ -1,4 +1,4 @@
-package BDS.BinaryTree.PreInPostRecursive;
+package BDS.BinaryTree.PreInPostIterative;
 
 import java.io.*;
 import java.util.*;
@@ -81,30 +81,10 @@ public class Main {
     display(node.right);
   }
 
-  public static void recurivePreTraversal(Node node) {
-    if(node == null){
-        return;
-    }
-    System.out.print(node.data + " -> ");
-    recurivePreTraversal(node.left);
-    recurivePreTraversal(node.right);
+  public static void iterativePrePostInTraversal(Node node) {
+    // write your code here
   }
-  public static void recuriveInTraversal(Node node) {
-    if(node == null){
-        return;
-    }
-    recuriveInTraversal(node.left);
-    System.out.print(node.data + " -> ");
-    recuriveInTraversal(node.right);
-  }
-  public static void recurivePostTraversal(Node node) {
-    if(node == null){
-        return;
-    }
-    recurivePostTraversal(node.left);
-    recurivePostTraversal(node.right);
-    System.out.print(node.data + " -> ");
-  }
+
   public static void main(String[] args) throws Exception {
     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     int n = Integer.parseInt(br.readLine());
@@ -117,18 +97,9 @@ public class Main {
         arr[i] = null;
       }
     }
-    // input:19
-    // 50 25 12 n n 37 30 n n n 75 62 n 70 n n 87 n n
 
     Node root = construct(arr);
-    System.out.println("PreOrder");
-    recurivePreTraversal(root);
-    System.out.println();
-    System.out.println("InOrder");
-    recuriveInTraversal(root);
-    System.out.println();
-    System.out.println("PostOrder");
-    recurivePostTraversal(root);
+    iterativePrePostInTraversal(root);
   }
 
 }
