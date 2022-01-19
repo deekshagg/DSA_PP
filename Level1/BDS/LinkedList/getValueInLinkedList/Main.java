@@ -11,6 +11,7 @@ public class Main {
     Node head;
     Node tail;
     int size;
+
     // complexity O(1)
     void addLast(int val) {
       Node temp = new Node();
@@ -27,21 +28,23 @@ public class Main {
       size++;
     }
 
-    public int size(){
+    public int size() {
       return size;
     }
-// complexity O(n)
-    public void display(){
-      for(Node temp = head; temp != null; temp = temp.next){
+
+    // complexity O(n)
+    public void display() {
+      for (Node temp = head; temp != null; temp = temp.next) {
         System.out.print(temp.data + " ");
       }
       System.out.println();
     }
-// complexity O(1)
-    public void removeFirst(){
-      if(size == 0){
+
+    // complexity O(1)
+    public void removeFirst() {
+      if (size == 0) {
         System.out.println("List is empty");
-      } else if(size == 1){
+      } else if (size == 1) {
         head = tail = null;
         size = 0;
       } else {
@@ -49,36 +52,38 @@ public class Main {
         size--;
       }
     }
-// complexity O(1)
-    public int getFirst(){
-      if(size==0){
-          System.out.println("List is empty");
-          return -1;
+
+    // complexity O(1)
+    public int getFirst() {
+      if (size == 0) {
+        System.out.println("List is empty");
+        return -1;
       }
       return head.data;
     }
-// complexity O(1)
-    public int getLast(){
-      if(size==0){
-          System.out.println("List is empty");
-          return -1;
+
+    // complexity O(1)
+    public int getLast() {
+      if (size == 0) {
+        System.out.println("List is empty");
+        return -1;
       }
       return tail.data;
     }
-// complexity O(n)
-    public int getAt(int idx){
-      if(size==0){
-          System.out.println("List is empty");
-          return -1;
-      }
-      else if(idx<0||idx>=size){
-          System.out.println("Invalid arguments");
-          return -1;
+
+    // complexity O(n)
+    public int getAt(int idx) {
+      if (size == 0) {
+        System.out.println("List is empty");
+        return -1;
+      } else if (idx < 0 || idx >= size) {
+        System.out.println("Invalid arguments");
+        return -1;
       }
 
       Node temp = head;
-      for(int i = 0 ; i < idx ; i++){
-          temp = temp.next;
+      for (int i = 0; i < idx; i++) {
+        temp = temp.next;
       }
       return temp.data;
     }
@@ -89,30 +94,30 @@ public class Main {
     LinkedList list = new LinkedList();
 
     String str = br.readLine();
-    while(str.equals("quit") == false){
-      if(str.startsWith("addLast")){
+    while (str.equals("quit") == false) {
+      if (str.startsWith("addLast")) {
         int val = Integer.parseInt(str.split(" ")[1]);
         list.addLast(val);
-      } else if(str.startsWith("size")){
+      } else if (str.startsWith("size")) {
         System.out.println(list.size());
-      } else if(str.startsWith("display")){
+      } else if (str.startsWith("display")) {
         list.display();
-      } else if(str.startsWith("removeFirst")){
+      } else if (str.startsWith("removeFirst")) {
         list.removeFirst();
-      } else if(str.startsWith("getFirst")){
+      } else if (str.startsWith("getFirst")) {
         int val = list.getFirst();
-        if(val != -1){
+        if (val != -1) {
           System.out.println(val);
         }
-      } else if(str.startsWith("getLast")){
+      } else if (str.startsWith("getLast")) {
         int val = list.getLast();
-        if(val != -1){
+        if (val != -1) {
           System.out.println(val);
         }
-      } else if(str.startsWith("getAt")){
+      } else if (str.startsWith("getAt")) {
         int idx = Integer.parseInt(str.split(" ")[1]);
         int val = list.getAt(idx);
-        if(val != -1){
+        if (val != -1) {
           System.out.println(val);
         }
       }
