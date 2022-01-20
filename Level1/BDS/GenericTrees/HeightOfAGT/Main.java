@@ -78,12 +78,23 @@ public class Main {
     // }
     // return height+1;
 
-    int height = 0; 
-    for (Node child : node.children){
-        int recursiveHeight = height(child);
-        height = Math.max(height, recursiveHeight+1);
+    // int height = 0; 
+    // for (Node child : node.children){
+    //     int recursiveHeight = height(child);
+    //     height = Math.max(height, recursiveHeight+1);
+    // }
+    // return height;
+
+    if(node.children == null || node.children.isEmpty())
+			return 0;
+    
+    int height = 0;
+    
+    for(Node child : node.children){
+      
+      height = Math.max(height, height(child));
     }
-    return height;
+    return height+1;
   }
 
   public static void main(String[] args) throws Exception {
