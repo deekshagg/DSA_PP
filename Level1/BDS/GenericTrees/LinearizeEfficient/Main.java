@@ -145,8 +145,21 @@ public class Main {
   }
 
   public static Node linearizeEfficient(Node node){
-    Node lastchild = node.children.get(node.children.size()-1);
-    return null;
+   if(node.children.size() == 0){
+      return node;
+    }
+    Node lastChild = node.children.get(node.children.size() -1);
+    Node lastKiTail = linearizeEfficient(lastChild);
+    while(node.children.size()>1){
+      Node slastchild = node.children.get(node.children.size() - 2);
+      Node slastktail = linearizeEfficient(slastchild);
+
+      slastktail.children.add(lastChild);
+
+      node.children.remove(node.children.size() -1);
+      lastChild = slastchild;
+    }
+    return lastKiTail;
   }
 
   public static void main(String[] args) throws Exception {
@@ -159,7 +172,7 @@ public class Main {
     }
 
     Node root = construct(arr);
-    // linearize(root);
+    linearizeEfficient(root);
     display(root);
   }
 
