@@ -76,7 +76,7 @@ public class Main {
         mover.slargest= node.data;
     }
     for(Node child: node.children){
-        slargest2(child, mover);
+        slargest2 (child, mover);
     }
 }
 
