@@ -101,11 +101,11 @@ public class Main {
     }
 
     Node root = construct(arr);
-    // multiSolver(root, 0);
-    // System.out.println("Sum = " + sum);
-    // System.out.println("Max = " + max);
-    // System.out.println("Min = " + min);
-    // System.out.println("Height = " + height);
+    multiSolver(root, 0);
+    System.out.println("Sum = " + sum);
+    System.out.println("Max = " + max);
+    System.out.println("Min = " + min);
+    System.out.println("Height = " + height);
     HeapMover mover = new HeapMover();
     multiSolver2(root, 0, mover);
     System.out.println("Sum = " + mover.sum);
