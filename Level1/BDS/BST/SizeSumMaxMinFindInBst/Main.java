@@ -118,7 +118,7 @@ public class Main {
   }
 
   public static boolean find(Node node, int data){
-
+// time comp - nlogn
     if(node == null){
       return false;
     }

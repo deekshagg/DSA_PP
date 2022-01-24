@@ -3,7 +3,7 @@ package TargetSumPairBST;
 import java.io.*;
 import java.util.*;
 
-public class Main {
+public class Main1 {
   public static class Node {
     int data;
     Node left;
@@ -81,28 +81,14 @@ public class Main {
     display(node.right);
   }
 
-  public static boolean find(Node node, int data){
-    if(node == null)
-      return false;
-    else if(data > node.data)
-      return find(node.right, data);
-    else if(data < node.data)
-      return find(node.left, data);
-    else
-      return true;
-  }
-// time c- nlogn ya log height
-// sp c - O(n)
-  public static void targetSumPair(Node root, Node node, int target){
-    if(node == null)  return;
-    targetSumPair(root, node.left, target);
-    int comp = target-node.data;
-    if(node.data<comp){
-      if(find(root, comp)==true){
-        System.out.println(node.data + " " + comp);
-      }
-    }
-    targetSumPair(root, node.right, target);
+//   tc - O(n)
+// sc - O(n)
+                // travel and fill
+  public static void tnf(Node node, ArrayList<Integer> list){
+      if(node == null)  return;
+      tnf(node.left, list);
+      list.add(node.data);
+      tnf(node.right, list);
   }
 
   public static void main(String[] args) throws Exception {
@@ -121,7 +107,24 @@ public class Main {
     int data = Integer.parseInt(br.readLine());
 
     Node root = construct(arr);
-    targetSumPair(root, root, data);
+    ArrayList<Integer> list = new ArrayList<>();
+    tnf(root, list);
+
+    int li= 0;
+    int ri = list.size()-1;
+    while(li<ri){
+        int left = list.get(li);
+        int right = list.get(ri);
+        if(left+right<data){
+            li++;
+        }else if(left+right>data){
+            ri--;
+        }else{
+            System.out.println(left +" " + right);
+            li++;
+            ri--;
+        }
+    }
   }
 
 }
