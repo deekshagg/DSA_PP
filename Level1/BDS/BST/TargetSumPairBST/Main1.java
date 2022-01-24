@@ -1,5 +1,8 @@
 package TargetSumPairBST;
 
+//    tc - O(n)
+//    sc - O(n)
+
 import java.io.*;
 import java.util.*;
 
@@ -81,8 +84,6 @@ public class Main1 {
     display(node.right);
   }
 
-//   tc - O(n)
-// sc - O(n)
                 // travel and fill
   public static void tnf(Node node, ArrayList<Integer> list){
       if(node == null)  return;

@@ -1,4 +1,4 @@
-package TargetSumPairBST;
+package AddNodeToBST;
 
 import java.io.*;
 import java.util.*;
@@ -81,28 +81,17 @@ public class Main {
     display(node.right);
   }
 
-  public static boolean find(Node node, int data){
-    if(node == null)
-      return false;
-    else if(data > node.data)
-      return find(node.right, data);
-    else if(data < node.data)
-      return find(node.left, data);
-    else
-      return true;
-  }
-// time c- O(n*height)
-// sp c - O(height)
-  public static void targetSumPair(Node root, Node node, int target){
-    if(node == null)  return;
-    targetSumPair(root, node.left, target);
-    int comp = target-node.data;
-    if(node.data<comp){
-      if(find(root, comp)==true){
-        System.out.println(node.data + " " + comp);
-      }
+  public static Node add(Node node, int data) {
+    if(node == null){
+      return new Node(data, null, null);
     }
-    targetSumPair(root, node.right, target);
+    if(data > node.data){
+      node.right = add(node.right, data);
+    }
+    else if(data< node.data){
+      node.left = add(node.left, data);
+    }
+    return node;
   }
 
   public static void main(String[] args) throws Exception {
@@ -121,7 +110,9 @@ public class Main {
     int data = Integer.parseInt(br.readLine());
 
     Node root = construct(arr);
-    targetSumPair(root, root, data);
+    root = add(root, data);
+
+    display(root);
   }
 
 }
