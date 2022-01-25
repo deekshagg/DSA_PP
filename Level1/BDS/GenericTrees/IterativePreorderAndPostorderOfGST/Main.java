@@ -1,3 +1,5 @@
+package Level1.BDS.GenericTrees.IterativePreorderAndPostorderOfGST;
+
 import java.io.*;
 import java.util.*;
 
@@ -52,11 +54,42 @@ public class Main {
     }
 
     public static class Pair {
-        int state = -1;
+        int state;
         Node node;
+        Pair(Node node,int state){
+            this.node = node;
+            this.state = state;
+        }
     }
 
     public static void Iterative(Node root) {
+
+        String PreOrder = "";
+        String PostOrder = "";
+
+        Stack<Pair> stack = new Stack<>();
+        Pair pair = new Pair(root, -1);
+        stack.push(pair);
+
+        while(stack.size() > 0){
+            Pair peek = stack.peek();
+            if(peek.state == -1){
+                PreOrder += peek.node.data + " ";
+                peek.state++;
+            }else if(peek.state >= 0 && peek.state<peek.node.children.size()){
+                Pair child = new Pair(peek.node.children.get(peek.state),-1);
+                stack.push(child);
+                peek.state++;
+            }else if(peek.state == peek.node.children.size()){
+                PostOrder += peek.node.data + " ";
+                peek.state++;
+            }else{
+                stack.pop();
+            }
+        }
+
+        System.out.println(PreOrder + "\n" + PostOrder);
+
 
     }
 
