@@ -1,68 +1,57 @@
 package BDS.BinaryTree.ConstructDisplay;
 
-import java.util.*;
 import java.util.Stack;
 
-public class Main {
+public class Main2 {
     public static class Node {
         int data;
         Node left;
         Node right;
+        Node(int data, Node left, Node right){
+            this.data = data;
+            this.left = left;
+            this.right  = right; 
+        }
     }
 
     public static class Pair {
         Node node;
         int state;
+        Pair(Node node, int state){
+            this.node = node;
+            this.state = state;
+        }
     }
 
     public static Node construct(Integer[] arr) {
+        Node root = new Node(arr[0], null, null);
+        Pair rootp = new Pair(root, 1);
         Stack<Pair> stack = new Stack<>();
-
-        Node root = new Node();
-        root.data = arr[0];
-
-        Pair rootp = new Pair();
-        rootp.node = root;
-        rootp.state= 1;
-
         stack.push(rootp);
         int idx = 1;
 
         while(stack.size()>0){
-            Pair peekp = stack.peek();
-
-            if(peekp.state == 1){
+            Pair tp = stack.peek();
+            if(tp.state == 1){
                 if(arr[idx] != null){
-                    Node lc = new Node();
-                    lc.data = arr[idx];
-
-                    peekp.node.left = lc;
-
-                    Pair lp = new Pair();
-                    lp.node = lc;
-                    lp.state = 1;
+                    Node lc = new Node(arr[idx], null, null);
+                    Pair lp = new Pair(lc, 1);
+                    tp.node.left = lc;
                     stack.push(lp);
                 }
-                peekp.state++;
+                tp.state++;
                 idx++;
             }
-
-            else if(peekp.state == 2){
+            else if(tp.state == 2){
                 if(arr[idx] != null){
-                    Node rc = new Node();
-                    rc.data = arr[idx];
-
-                    peekp.node.right = rc;
-
-                    Pair rp = new Pair();
-                    rp.node = rc;
-                    rp.state = 1;
+                    Node rc = new Node(arr[idx], null, null);
+                    Pair rp = new Pair(rc, 1);
+                    tp.node.right = rc;
                     stack.push(rp);
                 }
-                peekp.state++;
+                tp.state++;
                 idx++;
             }
-
             else{
                 stack.pop();
             }
@@ -74,11 +63,13 @@ public class Main {
         if(node == null){
             return;
         }
-        String str = " <- " + node.data + " -> ";
-        String lstr = node.left != null ? node.left.data + "" : ".";
-        String rstr = node.right != null ? node.right.data + "" : ".";
+        String str = "";
+        str += node.left == null?".":node.left.data + " ";
+        str += " <- " + node.data + " -> "; 
+        str += node.right == null?".":node.right.data + " ";
 
-        System.out.println(lstr + str + rstr);
+        System.out.println(str);
+
         display(node.left);
         display(node.right);
     }
