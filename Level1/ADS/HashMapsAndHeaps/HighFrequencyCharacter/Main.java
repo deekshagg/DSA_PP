@@ -28,6 +28,10 @@ public class Main {
                 hashmap.put(ch, 1);   // -> a[1]    ->b[2]  ->c[1]  ->d[1]
             }
         }
+        for(int i =0 ; i < str.length() ; i++){
+            char ch = str.charAt(i);
+            hashmap.put(ch, hashmap.getOrDefault(ch,0)+1);
+        }
         char maxfchar = str.charAt(0);//a   
         for(Character key : hashmap.keySet()){//a   b   c   d
             if(hashmap.get(key)>hashmap.get(maxfchar)){// 1>1   2>1     1>2
