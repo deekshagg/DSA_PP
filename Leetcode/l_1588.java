@@ -14,3 +14,5 @@ class l_1588 {
         return sum;
     }
 }
+// Input: arr = [1,4,2,5,3]
+// Output: 58

@@ -1,4 +1,4 @@
-package endPointofamatrix;
+package Level1.BasicsOfProgramming.2DArrays.endPointofamatrix;
 
 import java.io.*;
 import java.util.*;
