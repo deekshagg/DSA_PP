@@ -2,81 +2,68 @@ import java.io.*;
 import java.util.*;
 
 public class Main {
-    private static class Node {
-        int data;
-        ArrayList<Node> children = new ArrayList<>();
-    }
+   static class Edge {
+      int src;
+      int nbr;
+      int wt;
 
-    public static void display(Node node) {
-        String str = node.data + " -> ";
-        for (Node child : node.children) {
-            str += child.data + ", ";
-        }
-        str += ".";
-        System.out.println(str);
+      Edge(int src, int nbr, int wt) {
+         this.src = src;
+         this.nbr = nbr;
+         this.wt = wt;
+      }
+   }
+   static class Pair implements Comparable<Pair>{
+      int vtr;
+      String psf;
+      int wst;
+      Pair(int vtr,String psf,int wt){
+         this.vtr=vtr;
+         this.psf=psf;
+         this.wst=wst;
+      }
+      public int compareTo(Pair o){
+         return this.wst-o.wst;
+      }
+   }
+   public static void main(String[] args) throws Exception {
+      BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-        for (Node child : node.children) {
-            display(child);
-        }
-    }
+      int vtces = Integer.parseInt(br.readLine());
+      ArrayList<Edge>[] graph = new ArrayList[vtces];
+      for (int i = 0; i < vtces; i++) {
+         graph[i] = new ArrayList<>();
+      }
 
-    public static Node construct(int[] arr) {
-        Node root = null;
+      int edges = Integer.parseInt(br.readLine());
+      for (int i = 0; i < edges; i++) {
+         String[] parts = br.readLine().split(" ");
+         int v1 = Integer.parseInt(parts[0]);
+         int v2 = Integer.parseInt(parts[1]);
+         int wt = Integer.parseInt(parts[2]);
+         graph[v1].add(new Edge(v1, v2, wt));
+         graph[v2].add(new Edge(v2, v1, wt));
+      }
 
-        Stack<Node> st = new Stack<>();
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i] == -1) {
-                st.pop();
-            } else {
-                Node t = new Node();
-                t.data = arr[i];
+      int src = Integer.parseInt(br.readLine());
+      // write your code here
+      PriorityQueue<Pair> pq=new PriorityQueue<>();
+      pq.add(new Pair(src,src+"",0));
+      boolean[] visited=new boolean[vtces];
+      while(pq.size()>0){
+         Pair rem=pq.remove();
+         if(visited[rem.vtr]==true) continue;
 
-                if (st.size() > 0) {
-                    st.peek().children.add(t);
-                } else {
-                    root = t;
-                }
-
-                st.push(t);
+         visited[rem.vtr]=true;
+         System.out.println(rem.vtr+" via "+rem.psf+" @ "+rem.wst);
+         for(Edge e:graph[rem.vtr]){
+            if(visited[e.nbr]==false)
+             {
+             pq.add(new Pair(e.nbr,rem.psf+e.nbr,rem.wst+e.wt));
             }
-        }
+         }
 
-        return root;
-    }
-
-    public static void preorder(Node node) {
-        System.out.print(node.data + " ");
-        for (Node child : node.children) {
-            preorder(child);
-        }
-    }
-
-    public static class Pair {
-        int state = -1;
-        Node node;
-    }
-
-    public static void Iterative(Node root) {
-
-    }
-
-    public static void main(String[] args) throws Exception {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        int n = Integer.parseInt(br.readLine());
-        int[] arr = new int[n];
-        String[] values = br.readLine().split(" ");
-        for (int i = 0; i < n; i++) {
-            arr[i] = Integer.parseInt(values[i]);
-        }
-
-        // int k = Integer.parseInt(br.readLine());
-
-        Node root = construct(arr);
-        // display(root);
-        // preorder(root);
-        Iterative(root);
-        // int kthLargest = kthLargest(root, k);
-        // System.out.println(kthLargest);
-    }
-
+      }
+      
+   }
 }
