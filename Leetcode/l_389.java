@@ -19,3 +19,21 @@ class l_389 {
         return ' ';
     }
 }
+
+
+// 2nd approach 
+class Solution {
+    public char findTheDifference(String s, String t) {
+        int sum = 0;
+        for(int i = 0 ; i < s.length() ; i++){
+            sum+=s.charAt(i);
+        }
+        int sum2 =0;
+        for(int i = 0 ; i < t.length() ; i++){
+            sum2+=t.charAt(i);
+        }
+        char ch = (char)(sum2 -sum);
+        
+        return ch;
+    }
+}
