@@ -1,69 +1,55 @@
-import java.io.*;
+// Java implementation of
+// finding length of longest
+// Common substring using
+// Dynamic Programming
 import java.util.*;
-
 public class Main {
-   static class Edge {
-      int src;
-      int nbr;
-      int wt;
+	/*
+	Returns length of longest common substring
+	of X[0..m-1] and Y[0..n-1]
+	*/
+	static int LCSubStr(java.lang.String s1, java.lang.String s2)
+	{
+		char X[] = s1.toCharArray();
+      char Y[] = s2.toCharArray();
+      int m = s1.length();
+      int n = s2.length();
+		int LCStuff[][] = new int[m + 1][n + 1];
+	
+		// To store length of the longest
+		// common substring
+		int result = 0;
 
-      Edge(int src, int nbr, int wt) {
-         this.src = src;
-         this.nbr = nbr;
-         this.wt = wt;
-      }
-   }
-   static class Pair implements Comparable<Pair>{
-      int vtr;
-      String psf;
-      int wst;
-      Pair(int vtr,String psf,int wt){
-         this.vtr=vtr;
-         this.psf=psf;
-         this.wst=wst;
-      }
-      public int compareTo(Pair o){
-         return this.wst-o.wst;
-      }
-   }
-   public static void main(String[] args) throws Exception {
-      BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		// Following steps build
+		// LCSuff[m+1][n+1] in bottom up fashion
+		for (int i = 0; i <= m; i++)
+		{
+			for (int j = 0; j <= n; j++)
+			{
+				if (i == 0 || j == 0)
+					LCStuff[i][j] = 0;
+				else if (X[i - 1] == Y[j - 1])
+				{
+					LCStuff[i][j]
+						= LCStuff[i - 1][j - 1] + 1;
+					result = Integer.max(result,
+										LCStuff[i][j]);
+				}
+				else
+					LCStuff[i][j] = 0;
+			}
+		}
+		return result;
+	}
 
-      int vtces = Integer.parseInt(br.readLine());
-      ArrayList<Edge>[] graph = new ArrayList[vtces];
-      for (int i = 0; i < vtces; i++) {
-         graph[i] = new ArrayList<>();
-      }
+	// Driver Code
+	public static void main(String[] args)
+	{
+		String X = "OldSite:GeeksforGeeks.org";
+		String Y = "NewSite:GeeksQuiz.com";
 
-      int edges = Integer.parseInt(br.readLine());
-      for (int i = 0; i < edges; i++) {
-         String[] parts = br.readLine().split(" ");
-         int v1 = Integer.parseInt(parts[0]);
-         int v2 = Integer.parseInt(parts[1]);
-         int wt = Integer.parseInt(parts[2]);
-         graph[v1].add(new Edge(v1, v2, wt));
-         graph[v2].add(new Edge(v2, v1, wt));
-      }
-
-      int src = Integer.parseInt(br.readLine());
-      // write your code here
-      PriorityQueue<Pair> pq=new PriorityQueue<>();
-      pq.add(new Pair(src,src+"",0));
-      boolean[] visited=new boolean[vtces];
-      while(pq.size()>0){
-         Pair rem=pq.remove();
-         if(visited[rem.vtr]==true) continue;
-
-         visited[rem.vtr]=true;
-         System.out.println(rem.vtr+" via "+rem.psf+" @ "+rem.wst);
-         for(Edge e:graph[rem.vtr]){
-            if(visited[e.nbr]==false)
-             {
-             pq.add(new Pair(e.nbr,rem.psf+e.nbr,rem.wst+e.wt));
-            }
-         }
-
-      }
-      
-   }
+		System.out.println(LCSubStr(X,Y));
+	}
 }
+
+// This code is contributed by Sumit Ghosh

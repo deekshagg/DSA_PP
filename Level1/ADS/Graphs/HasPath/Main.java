@@ -1,4 +1,4 @@
-package ADS.Graphs.HasPath;
+package Level1.ADS.Graphs.HasPath;
 import java.io.*;
 import java.util.*;
 
