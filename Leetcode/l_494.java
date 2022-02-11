@@ -1,3 +1,4 @@
+package Leetcode;
 class l_494 {
     public int findTargetSumWays(int[] nums, int target) {
         return targetSum(nums, 0, 0, target);
