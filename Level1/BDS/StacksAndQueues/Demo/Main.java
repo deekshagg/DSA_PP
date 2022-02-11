@@ -1,4 +1,4 @@
-package BDS.Queue.Demo;
+package Level1.BDS.StacksAndQueues.Demo;
 import java.util.*;
 public class Main {
     public static void main(String args[]){

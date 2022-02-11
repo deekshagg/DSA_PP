@@ -1,4 +1,4 @@
-package Level1.BDS.Stacks.BalancedBrackets;
+package Level1.BDS.StacksAndQueues.BalancedBrackets;
 
 import java.io.*;
 import java.util.*;
