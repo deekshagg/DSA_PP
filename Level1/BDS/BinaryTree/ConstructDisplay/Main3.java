@@ -2,7 +2,7 @@ package Level1.BDS.BinaryTree.ConstructDisplay;
 
 import java.util.Stack;
 
-public class Main2 {
+public class Main3{
     public static class Node {
         int data;
         Node left;
@@ -24,52 +24,46 @@ public class Main2 {
     }
 
     public static Node construct(Integer[] arr) {
-        Node root = new Node(arr[0], null, null);
-        Pair rootp = new Pair(root, 1);
         Stack<Pair> stack = new Stack<>();
-        stack.push(rootp);
+        Node node = new Node(arr[0], null, null);
+        Pair p = new Pair(node, 1);
         int idx = 1;
-
+        stack.push(p);
         while(stack.size()>0){
-            Pair tp = stack.peek();
-            if(tp.state == 1){
+            Pair pp = stack.peek();
+            if(pp.state == 1){
                 if(arr[idx] != null){
-                    Node lc = new Node(arr[idx], null, null);
+                    Node lc = new Node(arr[idx], null, null); 
+                    pp.node.left = lc;
                     Pair lp = new Pair(lc, 1);
-                    tp.node.left = lc;
                     stack.push(lp);
                 }
-                tp.state++;
+                pp.state++;
                 idx++;
             }
-            else if(tp.state == 2){
+            else if(pp.state == 2){
                 if(arr[idx] != null){
-                    Node rc = new Node(arr[idx], null, null);
+                    Node rc = new Node(arr[idx], null, null); 
+                    pp.node.right = rc;
                     Pair rp = new Pair(rc, 1);
-                    tp.node.right = rc;
                     stack.push(rp);
                 }
-                tp.state++;
+                pp.state++;
                 idx++;
             }
             else{
                 stack.pop();
             }
         }
-        return root;
+        return node;
     }
 
     public static void display(Node node) {
-        if(node == null){
-            return;
-        }
-        String str = "";
-        str += node.left == null?".":node.left.data + " ";
-        str += " <- " + node.data + " -> "; 
-        str += node.right == null?".":node.right.data + " ";
-
-        System.out.println(str);
-
+        if(node == null) return;
+        String str = " <- " + node.data + " -> ";
+        String lcstr = node.left != null? node.left.data + "" : ".";
+        String rcstr = node.right != null? node.right.data + "" : ".";
+        System.out.println(lcstr + str + rcstr);
         display(node.left);
         display(node.right);
     }
