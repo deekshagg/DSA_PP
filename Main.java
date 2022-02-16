@@ -1,39 +1,51 @@
-
-// Java program for the above approach
-import java.util.*;
+// JAVA program to check whether two strings
+// are anagrams of each other
+import java.io.*;
+import java.util.Arrays;
+import java.util.Collections;
 
 class GFG {
 
-	public static int sumOfTwoPerfectCubes(int N) {
-		int count = 0;
-		HashMap<Integer, Integer> cubes = new HashMap<>();
-		for (int i = 1; i * i * i <= N; i++)
-			cubes.put((i * i * i), i);
+	/* function to check whether two strings are
+	anagram of each other */
+	public String anagramCheck(String input1,String input2)
+	{
+		// Get lengths of both strings
+		char str1[] = input1.toCharArray();
+		char str2[] = input2.toCharArray();
+		int n1 = str1.length;
+		int n2 = str2.length;
 
-		Iterator<Map.Entry<Integer, Integer>> itr = cubes.entrySet().iterator();
-		while (itr.hasNext()) {
-			Map.Entry<Integer, Integer> entry = itr.next();
+		// If length of both strings is not same,
+		// then they cannot be anagram
+		if (n1 != n2)
+			return "no";
 
-			int firstNumber = entry.getKey();
+		// Sort both strings
+		Arrays.sort(str1);
+		Arrays.sort(str2);
 
-			int secondNumber = N - entry.getKey();
-			if (cubes.containsKey(secondNumber)) {
-				count++;
-				break;
-			}
-		}
-		return count;
+		// Compare sorted strings
+		for (int i = 0; i < n1; i++)
+			if (str1[i] != str2[i])
+				return "no";
+
+		return "yes";
 	}
 
-	// Driver code
-	public static void main(String[] args) {
-		int N = 10;
-		int[] arr = {19, 79, 6, 3, 19, 50, 82, 34, 28, 73};
-		int count = 0;
-		for(int i = 0 ; i < N ; i++){
-			count += sumOfTwoPerfectCubes(arr[i]);
+	/* Driver Code*/
+	public static void main(String args[])
+	{
+		int a = 15;
+		int b = 25; 
+		if(a<b){
+			continue;
+			System.out.println(a);
 		}
-		System.out.println(count);
+		else{
+			System.out.println(b);
+		}
 	}
 }
 
+// This code is contributed by Nikita Tiwari.
