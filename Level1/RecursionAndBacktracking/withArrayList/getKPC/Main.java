@@ -33,4 +33,27 @@ public class Main {
         }
         return myResult;
     }
+    public static ArrayList<String> getKPC1(String str) {
+        if(str.length()==0){
+            ArrayList<String> bres = new ArrayList<>();
+            bres.add("");
+            return bres;
+        }
+        char ch = str.charAt(0);
+        String ros = str.substring(1);
+
+        ArrayList<String>  rres = getKPC(ros);
+        ArrayList<String>  ans = new ArrayList<>();
+
+        String chstr = codes[ch-'0'];
+        int i = 0;
+        while(i<chstr.length()){
+            for(String s : rres){
+                char c = chstr.charAt(i);
+                ans.add(c+s);
+            }
+            i++;
+        }
+        return ans;
+    }
 }
