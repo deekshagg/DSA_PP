@@ -42,4 +42,25 @@ public static void main(String[] args) throws Exception {
    return span;
  }
 
+ // 2nd 
+ public static int[] solve2(int[] arr){
+  int n = arr.length;
+  int span[] = new int[n];
+  Stack<Integer> stack = new Stack<>();
+  stack.push(n-1);
+
+  for(int i = n-2; i >= 0 ; i--){
+    while(stack.size() > 0 && arr[i] >= arr[stack.peek()]){
+      int j = stack.pop();
+      span[j] = j - i;
+    }
+    stack.push(i);
+  }
+  while(stack.size()>0){
+    int i = stack.pop();
+    span[i] = i + 1;
+  }
+  return span;
+}
+
 }
