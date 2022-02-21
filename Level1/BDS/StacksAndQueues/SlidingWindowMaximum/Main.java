@@ -1,4 +1,4 @@
-package Level1.BDS.StacksAndQueues.MaximumSlidingWindow;
+package Level1.BDS.StacksAndQueues.SlidingWindowMaximum;
 
 import java.io.*;
 import java.util.*;
