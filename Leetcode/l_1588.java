@@ -1,4 +1,4 @@
-package Leetcode;
+package LeetCode;
 
 class l_1588 {
     public int sumOddLengthSubarrays(int[] arr) {
