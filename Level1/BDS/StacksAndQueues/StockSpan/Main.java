@@ -1,66 +1,69 @@
 package Level1.BDS.StacksAndQueues.StockSpan;
+
 import java.io.*;
 import java.util.*;
 
-public class Main{
-  public static void display(int[] a){
+public class Main {
+  public static void display(int[] a) {
     StringBuilder sb = new StringBuilder();
 
-    for(int val: a){
+    for (int val : a) {
       sb.append(val + "\n");
     }
     System.out.println(sb);
   }
 
-public static void main(String[] args) throws Exception {
+  public static void main(String[] args) throws Exception {
     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
     int n = Integer.parseInt(br.readLine());
     int[] a = new int[n];
-    for(int i = 0; i < n; i++){
-       a[i] = Integer.parseInt(br.readLine());
+    for (int i = 0; i < n; i++) {
+      a[i] = Integer.parseInt(br.readLine());
     }
 
     int[] span = solve(a);
     display(span);
- }
+  }
 
- public static int[] solve(int[] arr){
-   int n = arr.length;
-   int[] span = new int[n];
-   Stack<Integer> stack = new Stack<>();
-   span[0] = 1;
-   stack.push(0);
-   for(int i = 1 ; i < n ; i++){
-     while(stack.size()>0 && arr[i]>arr[stack.peek()]){
-       stack.pop();
-     }
-     if(stack.size()==0) span[i] = i+1;
-     else span[i] = i-stack.peek();
-     stack.push(i);
-   }
-   return span;
- }
-
- // 2nd 
- public static int[] solve2(int[] arr){
-  int n = arr.length;
-  int span[] = new int[n];
-  Stack<Integer> stack = new Stack<>();
-  stack.push(n-1);
-
-  for(int i = n-2; i >= 0 ; i--){
-    while(stack.size() > 0 && arr[i] >= arr[stack.peek()]){
-      int j = stack.pop();
-      span[j] = j - i;
+  public static int[] solve(int[] arr) {
+    int n = arr.length;
+    int[] span = new int[n];
+    Stack<Integer> stack = new Stack<>();
+    span[0] = 1;
+    stack.push(0);
+    for (int i = 1; i < n; i++) {
+      while (stack.size() > 0 && arr[i] > arr[stack.peek()]) {
+        stack.pop();
+      }
+      if (stack.size() == 0)
+        span[i] = i + 1;
+      else
+        span[i] = i - stack.peek();
+      stack.push(i);
     }
-    stack.push(i);
+    return span;
   }
-  while(stack.size()>0){
-    int i = stack.pop();
-    span[i] = i + 1;
+
+  // 2nd
+  public static int[] solve2(int[] arr) {
+    int n = arr.length;
+    int span[] = new int[n];
+    Stack<Integer> stack = new Stack<>();
+    stack.push(n - 1);
+
+    for (int i = n - 2; i >= 0; i--) {
+      while (stack.size() > 0 && arr[i] >= arr[stack.peek()]) {
+        int j = stack.pop();
+        span[j] = j - i;
+      }
+      stack.push(i);
+    }
+    while (stack.size() > 0) {
+      int i = stack.pop();
+      span[i] = i + 1;
+    }
+    return span;
   }
-  return span;
-}
 
 }
