@@ -1,4 +1,4 @@
-package Level1.BDS.StacksAndQueues.QueueToStackAdapterPushEfficient;
+package Level1.BDS.StacksAndQueues.QueueToStackAdapterPopEfficient;
 
 import java.io.*;
 import java.util.*;
@@ -19,7 +19,13 @@ public class Main {
     }
 
     void push(int val) {
-      mainQ.add(val);
+      helperQ.add(val);
+      while(mainQ.size() > 0) {
+        helperQ.add(mainQ.remove());
+      }
+      Queue<Integer> t = mainQ;
+      mainQ = helperQ;
+      helperQ = t;
     }
 
     int pop() {
@@ -27,13 +33,7 @@ public class Main {
         System.out.println("Stack underflow");
         return -1;
       }
-      while(mainQ.size() > 1){
-        helperQ.add(mainQ.remove());
-      }
-      int ans = mainQ.remove();
-      mainQ = helperQ;
-      helperQ = new ArrayDeque<>();
-      return ans;
+      return mainQ.remove();
     }
 
     int top() {
@@ -41,15 +41,7 @@ public class Main {
         System.out.println("Stack underflow");
         return -1;
       }
-      while(mainQ.size() > 1){
-        helperQ.add(mainQ.remove());
-      }
-      int ans = mainQ.peek();
-      helperQ.add(ans);
-      mainQ = helperQ;
-      helperQ = new ArrayDeque<>();
-
-      return ans;
+      return mainQ.peek();
     }
   }
 
