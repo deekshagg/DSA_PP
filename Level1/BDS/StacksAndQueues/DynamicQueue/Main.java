@@ -1,4 +1,4 @@
-package Level1.BDS.StacksAndQueues.NormalQueue;
+package Level1.BDS.StacksAndQueues.DynamicQueue;
 
 import java.io.*;
 import java.util.*;
@@ -17,47 +17,57 @@ public class Main {
     }
 
     int size() {
+      // write ur code here
       return size;
     }
 
     void display() {
-      for(int i = 0 ; i < size ; i++) {
-        int idx = (front + i)%data.length;
+      // write ur code here
+      for(int i = 0; i < size; i++){
+        int idx = (front + i) % data.length;
         System.out.print(data[idx] + " ");
       }
       System.out.println();
     }
 
+    // change this code
     void add(int val) {
-      if(size ==  data.length) {
-        System.out.println("Queue overflow");
+      if (size == data.length) {
+        int newData[] = new int[2*data.length];
+        for(int i = 0 ; i < data.length ; i++) {
+          newData[i] = data[front+i];
+        }
+        data =  newData;
       }
-      else {
-        int rear = (front + size)%data.length;
-        data[rear] = val;
-        size++;
-      }
+      int idx = (front + size) % data.length;
+      data[idx] = val;
+      size++;
     }
 
     int remove() {
-      if(size == 0) {
-        System.out.println("Queue underflow");
-        return -1;
-      }
-      else {
-        int val = data[front];
-        front = (front+1)%data.length;
-        size--;
-        return val;
-      }
-    }
-
-    int peek() {
+      // write ur code here
       if(size == 0){
         System.out.println("Queue underflow");
         return -1;
-      }
-      else return data[front];
+       } else {
+        int val = data[front];
+
+        front = (front + 1) % data.length;
+        size--;
+
+        return val;
+       }
+    }
+
+    int peek() {
+       // write ur code here
+       if(size == 0){
+        System.out.println("Queue underflow");
+        return -1;
+       } else {
+        int val = data[front];
+        return val;
+       }
     }
   }
 
