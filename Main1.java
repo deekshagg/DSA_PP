@@ -38,13 +38,13 @@ public class Main1 {
             return ans;
         }
         ArrayList<String> arr = new ArrayList<String>();
-        for (int i = 0; i < n; ++i) {
-
+        for (int i = 0; i < n; i++) {
+            
             String newPrefix = prefix + set[i];
-
-            arr.add(newPrefix);
-
             ArrayList<String> a = getAllKLengthRec(set, newPrefix, n, k - 1);
+
+            arr = a;
+
         }
         return arr;
     }
