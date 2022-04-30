@@ -1,4 +1,4 @@
-package BasicsOfProgramming.GettingStarted.PrintAllPrimesN;
+package Level1.BasicsOfProgramming.GettingStarted.PrintAllPrimesN;
 
 import java.util.Scanner;
 
@@ -8,7 +8,7 @@ public class Main {
         System.out.println("enter the range in which you want to print prime");
         int low = scan.nextInt();
         int high = scan.nextInt();
-        for(int n = low ; n<=high ; n++){
+        for(int n = low; n <= high; n++){
             Boolean isPrime = true;
             for(int div = 2 ; div * div <= n ; div++){
                 int rem = n % div;
@@ -18,7 +18,7 @@ public class Main {
                 }
             }
             if(isPrime==true){
-                System.out.println(n);
+                System.out.print(n + ", ");
             }
         }
         scan.close();
