@@ -1,6 +1,5 @@
-package MatrixMultiplication;
+// package Level1.BasicsOfProgramming.2DArrays.MatrixMultiplication;
 
-import java.io.*;
 import java.util.*;
 
 public class Main{
@@ -36,8 +35,8 @@ public static void main(String[] args) throws Exception {
     // multiplying
     int[][] product = new int[row1][col2];
 
-    for(int i = 0 ; i < row1 ; i++){
-        for(int j = 0 ;j < col2;j++)
+    for(int i = 0; i < row1; i++){
+        for(int j = 0; j < col2; j++)
         {
             int val=0;
             for(int k=0;k<row2;k++)
@@ -47,13 +46,15 @@ public static void main(String[] args) throws Exception {
             product[i][j]=val;
         }
     }
-    for(int i = 0 ; i < row1 ; i++){
-        for(int j = 0 ;j < col2;j++)
+    for(int i = 0; i < row1; i++){
+        for(int j = 0; j < col2; j++)
         {
             System.out.print(product[i][j]+" ");
         }
         System.out.println();
     }
+
+    scn.close();
 
  }
 
