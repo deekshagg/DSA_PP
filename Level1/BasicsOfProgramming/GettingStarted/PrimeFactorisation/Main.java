@@ -1,4 +1,4 @@
-package 1_BasicsOfProgramming.GettingStarted.PrimeFactorisation;
+package BasicsOfProgramming.GettingStarted.PrimeFactorisation;
 
 import java.util.*;
 

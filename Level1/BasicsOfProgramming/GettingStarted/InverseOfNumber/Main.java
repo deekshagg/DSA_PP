@@ -25,4 +25,22 @@ public static void main(String[] args) {
     System.out.println(inverse);
 
  }
+
+
+ public static void main(String[] args) {
+  Scanner scn = new Scanner(System.in);
+  int number = scn.nextInt();
+  int temp = number;
+  int ans = 0;
+  int i = 1;
+  while(temp > 0) {
+    int r = number % 10;
+    int p = (int)Math.pow(10, r - 1);
+    number = number / 10;
+    ans += i * p;
+    i++;
+    temp =  temp / 10;
+  }
+  System.out.println(ans);
+}
 }
