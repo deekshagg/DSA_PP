@@ -1,7 +1,6 @@
-package removeAt;
+package Level1.BDS.LinkedList.removeAt;
 
 import java.io.*;
-import java.util.*;
 
 public class Main {
   public static class Node {

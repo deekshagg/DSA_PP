@@ -1,7 +1,6 @@
-package OddEvenLinkedList;
+package Level1.BDS.LinkedList.OddEvenLinkedList;
 
 import java.io.*;
-import java.util.*;
 
 public class Main {
   public static class Node {

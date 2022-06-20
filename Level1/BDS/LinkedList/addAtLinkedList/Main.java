@@ -1,6 +1,5 @@
-package BDS.LinkedList.addAtLinkedList;
+package Level1.BDS.LinkedList.addAtLinkedList;
 import java.io.*;
-import java.util.*;
 
 public class Main {
   public static class Node {

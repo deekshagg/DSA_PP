@@ -1,6 +1,5 @@
-package BDS.LinkedList.addFirstInLinkedList;
+package Level1.BDS.LinkedList.addFirstInLinkedList;
 import java.io.*;
-import java.util.*;
 
 public class Main {
   public static class Node {
